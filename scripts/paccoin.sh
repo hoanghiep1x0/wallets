@@ -9,7 +9,7 @@ COIN_PATH='/usr/bin/'
 COIN_TGZ='https://github.com/hoanghiep1x0/wallets/raw/master/paccoin/paccoin.zip'
 COIN_FODER_UNZIP='paccoin'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='Paccoin'
+COIN_NAME='paccoin'
 COIN_EXPLORER=''
 COIN_PORT=7111
 RPC_PORT=7112
@@ -61,14 +61,14 @@ if [[ $COIN_TGZ = *.zip ]]; then
     unzip $COIN_ZIP -d $COIN_FODER_UNZIP >/dev/null 2>&1
     cd ${COIN_FODER_UNZIP}
     chmod 777 -R ./* 
-   ln -s
+    ls 
     cp * /usr/bin/
  fi
 if [[ $COIN_TGZ = *.gz ]]; then
      tar -zxvf $COIN_ZIP 
      cd ${COIN_FODER_UNZIP}
      chmod 777 -R ./*
-     ln -s
+     ls
      cp * /usr/bin/
  fi
 
@@ -76,12 +76,12 @@ if [[ $COIN_TGZ = *.bz2 ]]; then
       tar -jxvf $COIN_ZIP 
       cd ${COIN_FODER_UNZIP}
       chmod 777 -R ./*
-     ln -s
+      ls 
       cp * /usr/bin/
  fi
 
-  compile_error
-  ln -s
+     compile_error
+     ls
  
 #   clear
 }
