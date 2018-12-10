@@ -1,18 +1,18 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='darkpaycoin.conf'
-CONFIGFOLDER='/root/.darkpaycoin'
-COIN_DAEMON='darkpaycoind'
-COIN_CLI='darkpaycoin-cli'
+CONFIG_FILE='mnpcoin.conf'
+CONFIGFOLDER='/root/.mnpcoin'
+COIN_DAEMON='mnpcoind'
+COIN_CLI='mnpcoin-cli'
 COIN_PATH='/usr/bin/'
-COIN_TGZ='https://github.com/hoanghiep1x0/wallets/raw/master/darkpaycoin/darkpaycoin.zip'
-COIN_FODER_UNZIP='darkpaycoin'
+COIN_TGZ='https://github.com/hoanghiep1x0/wallets/raw/master/mnpcoin/mnpcoin.zip'
+COIN_FODER_UNZIP='mnpcoin'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='Darkpaycoin'
+COIN_NAME='Mnpcoin'
 COIN_EXPLORER=''
-COIN_PORT=6667
-RPC_PORT=6666
+COIN_PORT=12889
+RPC_PORT=12889
 # read -p "Enter Ip Of Masternodes:" _nodeIpAddress
 # printf -v _nodeIpAddress '%s' $_nodeIpAddress
 NODEIP=$(curl -s4 icanhazip.com)

@@ -3,16 +3,16 @@
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='evos.conf'
 CONFIGFOLDER='/root/.evos'
-COIN_DAEMON='evos'
+COIN_DAEMON='evosd'
 COIN_CLI='evos-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/hoanghiep1x0/wallets/blob/master/Evos/Evos.zip'
+COIN_TGZ='https://github.com/hoanghiep1x0/wallets/raw/master/Evos/Evos.zip'
 COIN_FODER_UNZIP='./evos'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Evos'
 COIN_EXPLORER=''
-COIN_PORT=6889
-RPC_PORT=6888
+COIN_PORT=9889
+RPC_PORT=9888
 # read -p "Enter Ip Of Masternodes:" _nodeIpAddress
 # printf -v _nodeIpAddress '%s' $_nodeIpAddress
 NODEIP=$(curl -s4 icanhazip.com)
@@ -89,7 +89,7 @@ if [[ $COIN_TGZ = *.bz2 ]]; then
   cd ~ >/dev/null 2>&1
   ls -la
   rm -rf $TMP_FOLDER >/dev/null 2>&1
-  clear
+#   clear
 }
 
 function configure_systemd() {

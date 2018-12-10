@@ -5,14 +5,14 @@ CONFIG_FILE='BitMoney.conf'
 CONFIGFOLDER='/root/.BitMoney'
 COIN_DAEMON='BitMoneyd'
 COIN_CLI='BitMoney-cli'
-COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/hoanghiep1x0/wallets/blob/master/bitmoney/bitmoney.zip'
-COIN_FODER_UNZIP='./bitmoney'
+COIN_PATH='/usr/bin/'
+COIN_TGZ='https://github.com/hoanghiep1x0/wallets/raw/master/bitmoney/bitmoney.zip'
+COIN_FODER_UNZIP='bitmoney'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='BitMoney'
 COIN_EXPLORER=''
-COIN_PORT=6889
-RPC_PORT=6888
+COIN_PORT=49444
+RPC_PORT=49443
 # read -p "Enter Ip Of Masternodes:" _nodeIpAddress
 # printf -v _nodeIpAddress '%s' $_nodeIpAddress
 NODEIP=$(curl -s4 icanhazip.com)
@@ -58,38 +58,32 @@ function download_node() {
   compile_error
 
 if [[ $COIN_TGZ = *.zip ]]; then
-    unzip $COIN_ZIP >/dev/null 2>&1
-    chmod 777 -R $COIN_FODER_UNZIP
-    ls -la
-    cp * /dev/null 2>&1
+    unzip $COIN_ZIP -d $COIN_FODER_UNZIP >/dev/null 2>&1
+    cd ${COIN_FODER_UNZIP}
+    chmod 777 -R ./* 
+    ls 
+    cp * /usr/bin/
  fi
 if [[ $COIN_TGZ = *.gz ]]; then
      tar -zxvf $COIN_ZIP 
      cd ${COIN_FODER_UNZIP}
-     chmod 777 -R $COIN_FODER_UNZIP
-     ls -la
-     cp * /dev/null 2>&1
+     chmod 777 -R ./*
+     ls
+     cp * /usr/bin/
  fi
 
 if [[ $COIN_TGZ = *.bz2 ]]; then
       tar -jxvf $COIN_ZIP 
       cd ${COIN_FODER_UNZIP}
-      chmod 777 -R $COIN_FODER_UNZIP
-      ls -la
-      cp * /dev/null 2>&1 
+      chmod 777 -R ./*
+      ls 
+      cp * /usr/bin/
  fi
 
   compile_error
-  chmod +x $COIN_DAEMON
-  chmod +x $COIN_CLI
-  cp $COIN_DAEMON $COIN_PATH
-  cp $COIN_DAEMON /root/
-  cp $COIN_CLI $COIN_PATH
-  cp $COIN_CLI /root/
-  cd ~ >/dev/null 2>&1
-  ls -la
-  rm -rf $TMP_FOLDER >/dev/null 2>&1
-  clear
+  ls 
+ 
+#   clear
 }
 
 function configure_systemd() {
