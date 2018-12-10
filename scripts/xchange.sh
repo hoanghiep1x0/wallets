@@ -3,8 +3,8 @@
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='Xchange.conf'
 CONFIGFOLDER='/root/.Xchangecore'
-COIN_DAEMON='Xchangecored'
-COIN_CLI='Xchangecore-cli'
+COIN_DAEMON='Xchanged'
+COIN_CLI='Xchange-cli'
 COIN_PATH='/usr/bin/'
 COIN_TGZ='https://github.com/hoanghiep1x0/wallets/raw/master/xchange/xchange.zip'
 COIN_FODER_UNZIP='xchange'
