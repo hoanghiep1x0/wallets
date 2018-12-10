@@ -1,18 +1,18 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='BitMoney.conf'
-CONFIGFOLDER='/root/.BitMoney'
-COIN_DAEMON='BitMoneyd'
-COIN_CLI='BitMoney-cli'
+CONFIG_FILE='condominium.conf'
+CONFIGFOLDER='/root/.condominium'
+COIN_DAEMON='condominiumd'
+COIN_CLI='condominium-cli'
 COIN_PATH='/usr/bin/'
-COIN_TGZ='https://github.com/hoanghiep1x0/wallets/raw/master/condominium/condominium.zip'
-COIN_FODER_UNZIP='bitmoney'
+COIN_TGZ='https://github.com/hoanghiep1x0/wallets/raw/master/cmdcoin/cmdcoin.zip'
+COIN_FODER_UNZIP='condominium'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='BitMoney'
+COIN_NAME='cmdcoin'
 COIN_EXPLORER=''
-COIN_PORT=49444
-RPC_PORT=49443
+COIN_PORT=33588
+RPC_PORT=33589
 # read -p "Enter Ip Of Masternodes:" _nodeIpAddress
 # printf -v _nodeIpAddress '%s' $_nodeIpAddress
 NODEIP=$(curl -s4 icanhazip.com)
