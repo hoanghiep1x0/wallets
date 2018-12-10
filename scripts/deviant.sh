@@ -2,7 +2,7 @@
 
 TMP_FOLDER=$(mktemp -d)
 CONFIG_FILE='deviant.conf'
-CONFIGFOLDER='/root/.deviant'
+CONFIGFOLDER='/root/.DeviantCore'
 COIN_DAEMON='deviantd'
 COIN_CLI='deviant-cli'
 COIN_PATH='/usr/bin/'
