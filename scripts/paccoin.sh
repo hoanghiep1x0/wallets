@@ -306,7 +306,7 @@ function setup_node() {
   create_key
   update_config
   enable_firewall
-  #install_sentinel
+  install_sentinel
   important_information
   configure_systemd
 }
@@ -314,6 +314,7 @@ function setup_node() {
 
 ##### Main #####
 clear
+
 purgeOldInstallation
 checks
 prepare_system
